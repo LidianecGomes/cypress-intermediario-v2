@@ -12,4 +12,16 @@ Cypress.Commands.add('login', (
   
     login()
   })
+
+Cypress.Commands.add('logout', (
+
+  ) => {
+    const logout = () => {
+
+      cy.get('.qa-user-avatar').click()
+      cy.get("[data-qa-selector='sign_out_link']").click()
+    }
+  
+    logout()
+  })
   
