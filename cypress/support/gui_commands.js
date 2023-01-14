@@ -24,4 +24,30 @@ Cypress.Commands.add('logout', (
   
     logout()
   })
+
+
+   //Minha tentativa
+  /*Cypress.Commands.add('newProject', (
+
+    name = Cypress.env('projectName')
+
+    ) => {
+      const newProject = () => {
+  
+        cy.get('.blank-state blank-state-link').click()
+      }
+    
+      newProject()
+    })*/
+
+
+    Cypress.Commands.add('gui_newProject', project => {
+      cy.visit('/projects/new')
+    
+      cy.get('#project_name').type(project.name)
+      cy.get('#project_description').type(project.description)
+      cy.get('.qa-initialize-with-readme-checkbox').check()
+      cy.contains('Create project').click()
+    })
+
   
